@@ -15,6 +15,6 @@ Config.Fines = {
 -- Charges for care that health insurance covers (insured patients pay nothing).
 -- Placeholder prices until the server price base is set.
 Config.Care = {
-    society = 'omc',   -- hospital account that receives the money
+    society = 'lsmc',   -- hospital account that receives the money
     mriScan = 250,
 }
