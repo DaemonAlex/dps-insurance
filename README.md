@@ -126,6 +126,10 @@ tests/run.lua
 - **12 November 2026.** README: what it is for, how it works with each paid script, other DPS scripts.
 - **31 October 2026.** The default hospital account is `lsmc` (Los Santos Medical Center). It was `omc`. Change `Config.Care.society` if your hospital job has another name.
 
+## Author
+
+Made by [DaemonAlex](https://github.com/DaemonAlex) for DelPerroSands.
+
 ## Other DPS scripts
 
 All of these are made for DelPerroSands and run together on one Qbox server. Each one works on
