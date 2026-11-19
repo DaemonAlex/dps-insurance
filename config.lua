@@ -18,3 +18,17 @@ Config.Care = {
     society = 'lsmc',   -- hospital account that receives the money
     mriScan = 250,
 }
+
+-- Incidents reported by other scripts (ReportIncident export): a report in m-Insurance's accident log (brokers and
+-- police see it there, with the picture), and a premium rise on the car's active vehicle policy.
+Config.Incidents = {
+    enabled = true,
+    reporter = 'Station camera',     -- shown as the reporting officer in the accident log
+    windowDays = 90,                 -- rises within this window count toward the cap
+    maxSurcharge = 50,               -- percent a car's premium can rise in the window, all incidents together
+    kinds = {                        -- percent per incident, by kind
+        fuel_driveoff = { surcharge = 10, label = 'Gas station drive-off (pump nozzle torn off)' },
+        fuel_driveoff_fire = { surcharge = 20, label = 'Gas station drive-off, pump fire' },
+    },
+    defaultSurcharge = 5,            -- for a kind not listed above
+}

@@ -27,4 +27,18 @@ function Logic.societyOf(officerData, fallback)
     return job
 end
 
+
+-- Incidents (fuel drive-offs and the like) raise a car's premium by a percent, capped over a window.
+-- prevTotal = percent already added in the window. Returns the percent to add now (0 when at the cap).
+function Logic.surchargeToAdd(prevTotal, pct, cap)
+    prevTotal, pct, cap = tonumber(prevTotal) or 0, tonumber(pct) or 0, tonumber(cap) or 0
+    if pct <= 0 or prevTotal >= cap then return 0 end
+    return math.min(pct, cap - prevTotal)
+end
+
+function Logic.raisedPrice(price, pct)
+    price = tonumber(price) or 0
+    return math.floor(price * (100 + (tonumber(pct) or 0)) / 100 + 0.5)
+end
+
 return Logic

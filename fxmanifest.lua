@@ -3,9 +3,9 @@ game 'gta5'
 lua54 'yes'
 
 name 'dps-insurance'
-author 'Del Perro Sands'
+author 'DaemonAlex'
 description 'Ties m-Insurance into the MDT, impound, hospital and medical chart'
-version '1.0.0'
+version '1.1.0'
 
 dependencies { 'ox_lib', 'oxmysql', 'qbx_core', 'm-Insurance' }
 
@@ -19,4 +19,5 @@ server_scripts {
     '@oxmysql/lib/MySQL.lua',
     'server/coverage.lua',
     'server/fines.lua',
+    'server/incidents.lua',
 }
