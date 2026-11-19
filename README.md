@@ -13,6 +13,15 @@ Ties **m-Insurance** into the rest of the Del Perro Sands server: the MDT, impou
 | **Medical chart** | dps-medical shows an "Insured" line on the patient chart. |
 | **Parking** | dps-parking detects this resource and uses it for insurance checks. |
 
+## Incidents from other scripts
+
+`exports['dps-insurance']:ReportIncident({ plate, kind, citizenid?, name?, location?, photo?, notes? })` files a
+car incident: an entry in m-Insurance's accident log (brokers and police see it there, with the picture) and a
+premium rise on the car's active vehicle policy. The percent per kind is in `Config.Incidents.kinds`
+(`fuel_driveoff` 10%, `fuel_driveoff_fire` 20%, anything else 5%), capped at 50% within 90 days, and every
+rise is kept in `dps_insurance_incidents` and m-Insurance's own history. dps-fuel uses it for gas station
+drive-offs caught on camera.
+
 ## Exports (server)
 
 ```lua
@@ -122,6 +131,8 @@ tests/run.lua
 ```
 
 ## Recent changes
+
+- **19 November 2026.** `ReportIncident`: other scripts file car incidents (accident log entry and a capped premium rise). dps-fuel sends gas station drive-offs.
 
 - **12 November 2026.** README: what it is for, how it works with each paid script, other DPS scripts.
 - **31 October 2026.** The default hospital account is `lsmc` (Los Santos Medical Center). It was `omc`. Change `Config.Care.society` if your hospital job has another name.
