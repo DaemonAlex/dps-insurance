@@ -29,6 +29,7 @@ Config.Incidents = {
     kinds = {                        -- percent per incident, by kind
         fuel_driveoff = { surcharge = 10, label = 'Gas station drive-off (pump nozzle torn off)' },
         fuel_driveoff_fire = { surcharge = 20, label = 'Gas station drive-off, pump fire' },
+        fuel_theft = { surcharge = 5, label = 'Fuel theft (left without paying)' },
     },
     defaultSurcharge = 5,            -- for a kind not listed above
 }
